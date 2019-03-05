@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<!-- 配置生成器 -->
+<generatorConfiguration>
+  <!-- 配置对象环境 -->
+  <context id="MySqlContext" targetRuntime="MyBatis3">
+
+    <!-- 必须配置的项，连接数据库 -->
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/miaosha"
+      userId="root" password="root"
+    >
+    </jdbcConnection>
+
+    <!-- 配置生成的实体类位置 -->
+    <javaModelGenerator targetPackage="com.lizewu.miaosha.dataobject" targetProject="src/main/java">
+      <property name="enableSubPackage" value="true"/>
+    </javaModelGenerator>
+
+    <!-- 配置映射位置 -->
+    <sqlMapGenerator targetPackage="mapping" targetProject="src/main/resources">
+      <property name="enableSubPackage" value="true"/>
+    </sqlMapGenerator>
+
+    <!-- 配置接口位置 -->
+    <javaClientGenerator targetPackage="com.lizewu.miaosha.dao" type="XMLMAPPER" targetProject="src/main/java">
+      <property name="enableSubPackage" value="true"/>
+    </javaClientGenerator>
+
+    <!-- 配置数据库表 -->
+    <table tableName="user_info" domainObjectName="UserDO" enableCountByExample="false"
+    enableUpdateByExample="false" enableSelectByExample="false" enableDeleteByExample="false"
+    selectByExampleQueryId="false"></table>
+    <table tableName="user_password" domainObjectName="UserPasswordDO" enableCountByExample="false"
+      enableUpdateByExample="false" enableSelectByExample="false" enableDeleteByExample="false"
+      selectByExampleQueryId="false"></table>
+  </context>
+</generatorConfiguration>
