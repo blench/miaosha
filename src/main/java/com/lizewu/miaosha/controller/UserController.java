@@ -20,7 +20,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/get")
+    @RequestMapping("/getUser")
     @ResponseBody
     public UserVO getUser(@RequestParam(name="id")Integer id)
     {
